@@ -14,5 +14,5 @@ if __name__ == "__main__":
     result3 = mul(a, b)
     print("{} * {} = {}".format(a, b, result3))
 
-    result = div(a, b)
+    result4 = div(a, b)
     print("{} / {} = {}".format(a, b, result4))
