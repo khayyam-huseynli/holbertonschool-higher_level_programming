@@ -37,6 +37,6 @@ def lazy_matrix_mul(m_a, m_b):
         raise TypeError("setting an array element with a sequence.")
 
     if len(m_a[0]) != len(m_b):
-        raise ValueError("m_a and m_b can't be multiplied")
+        raise ValueError("shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)")
 
     return (np.matmul(m_a, m_b))
