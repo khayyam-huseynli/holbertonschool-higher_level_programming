@@ -1,21 +1,10 @@
-#!/usr/bin/python3i
-"""Modul for adding two integers"""
-
-
+#!/usr/bin/python3
 def add_integer(a, b=98):
-    """Func that adds two integers """
+    """function that add 2 numbers"""
 
-    # Check if both inputs are integers or floats
-    if not isinstance(a, (int, float)):
+    if not a or (type(a) is not int and type(a) is not float):
         raise TypeError("a must be an integer")
-    if not isinstance(b, (int, float)):
+    if type(b) is not int and type(b) is not float:
         raise TypeError("b must be an integer")
 
-    # Convert to integers if inputs are floats
-    if isinstance(a, float):
-        a = int(a)
-    if isinstance(b, float):
-        b = int(b)
-
-    # Perform addition and return the result
-    return int(a + b)
+    return (int(a) + int(b))
