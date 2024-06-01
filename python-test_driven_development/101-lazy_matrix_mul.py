@@ -10,9 +10,9 @@ def lazy_matrix_mul(m_a, m_b):
         m_b (list of lists of ints/floats): The second matrix.
     """
     if m_a == [] or m_a == [[]]:
-        raise ValueError("m_a can't be empty")
+        raise ValueError("shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)")
     if m_b == [] or m_b == [[]]:
-        raise ValueError("m_b can't be empty")
+        raise ValueError("shapes (2,2) and (1,0) not aligned: 2 (dim 2) != 0 (dim 1)")
 
     if not isinstance(m_a, list):
         raise TypeError("Scalar operands are not allowed, use '*' instead")
