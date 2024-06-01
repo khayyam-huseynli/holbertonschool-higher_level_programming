@@ -40,7 +40,7 @@ def lazy_matrix_mul(m_a, m_b):
 
     if m_a_num_1 != m_b_num_0:
         raise ValueError("shapes {} and {} not aligned: {} (dim 1) != {} \
-                         (dim 0)".format(m_a_num.shape(), m_b_num.shape(),
+                         (dim 0)".format(m_a_num.shape, m_b_num.shape,
                                          m_a_num_1, m_b_num_0))
 
     return (np.matmul(m_a, m_b))
