@@ -16,8 +16,8 @@ def lazy_matrix_mul(m_a, m_b):
     if not isinstance(m_b, list):
         raise ValueError("Scalar operands are not allowed, use '*' instead")
 
-    if not all(isinstance(row, list) for row in m_a) and
-    all(isinstance(row, list) for row in m_b):
+    if (not all(isinstance(row, list) for row in m_a) and
+            all(isinstance(row, list) for row in m_b)):
         raise ValueError("shapes (2,) and (1,2) not aligned: "
                          "2 (dim 0) != 1 (dim 0)")
     if not all(isinstance(row, list) for row in m_b):
