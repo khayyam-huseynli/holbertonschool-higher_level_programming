@@ -17,9 +17,11 @@ def lazy_matrix_mul(m_a, m_b):
         raise ValueError("Scalar operands are not allowed, use '*' instead")
 
     if not all(isinstance(row, list) for row in m_a):
-        raise TypeError("m_a must be a list of lists")
+        raise ValueError("shapes (2,) and (1,2) not aligned: "
+                         "2 (dim 0) != 1 (dim 0)")
     if not all(isinstance(row, list) for row in m_b):
-        raise TypeError("m_b must be a list of lists")
+        raise ValueError("shapes (2,) and (1,2) not aligned: "
+                         "2 (dim 0) != 1 (dim 0)")
 
     if not all((isinstance(ele, int) or isinstance(ele, float))
                for ele in [num for row in m_a for num in row]):
