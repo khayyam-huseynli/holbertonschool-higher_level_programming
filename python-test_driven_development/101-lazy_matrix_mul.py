@@ -10,9 +10,9 @@ def lazy_matrix_mul(m_a, m_b):
         m_b (list of lists of ints/floats): The second matrix.
     """
     if not isinstance(m_a, list):
-        raise TypeError("Scalar operands are not allowed, use '*' instead")
+        raise ValueError("Scalar operands are not allowed, use '*' instead")
     if not isinstance(m_b, list):
-        raise TypeError("Scalar operands are not allowed, use '*' instead")
+        raise ValueError("Scalar operands are not allowed, use '*' instead")
 
     if not all(isinstance(row, list) for row in m_a):
         raise TypeError("m_a must be a list of lists")
