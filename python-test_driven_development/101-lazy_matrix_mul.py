@@ -11,7 +11,7 @@ def lazy_matrix_mul(m_a, m_b):
     """
     try:
         # Perform matrix multiplication
-        result_matrix = np.dot(matrix1, matrix2)
+        result_matrix = np.dot(m_a, m_b)
         return result_matrix
 
     except Exception as e:
