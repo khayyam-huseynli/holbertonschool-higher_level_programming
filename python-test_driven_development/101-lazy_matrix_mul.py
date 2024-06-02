@@ -38,7 +38,7 @@ def lazy_matrix_mul(m_a, m_b):
 
     if m_a_num_1 != m_b_num_0:
         if not all((isinstance(ele, int) or isinstance(ele, float))
-                   for ele in [num for row in m_a for num in row]):
+                   for ele in [num for row in m_b for num in row]):
             raise TypeError("Object arrays are not currently supported")
         else:
             raise ValueError("shapes ({},{}) and ({},{}) not aligned: "
