@@ -27,8 +27,9 @@ def lazy_matrix_mul(m_a, m_b):
     m_a_num = np.array(m_a)
     m_b_num = np.array(m_b)
 
-    m_a_num_0, m_a_num_1 = m_a_num.shape
-    m_b_num_0, m_b_num_1 = m_b_num.shape
+    if not m_a_num.ndim < 2 and not m_b_num.ndim < 2:
+        m_a_num_0, m_a_num_1 = m_a_num.shape
+        m_b_num_0, m_b_num_1 = m_b_num.shape
 
     if m_a_num_1 != m_b_num_0:
         raise ValueError("shapes ({},{}) and ({},{}) not aligned: "
