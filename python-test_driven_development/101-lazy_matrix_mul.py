@@ -9,6 +9,8 @@ def lazy_matrix_mul(m_a, m_b):
         m_a (list of lists of ints/floats): The first matrix.
         m_b (list of lists of ints/floats): The second matrix.
     """
+    if m_a is None or m_b is None:
+        raise TypeError("Object arrays are not currently supported")
     if not isinstance(m_a, list):
         raise ValueError("Scalar operands are not allowed, use '*' instead")
     if not isinstance(m_b, list):
