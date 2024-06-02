@@ -24,9 +24,9 @@ def lazy_matrix_mul(m_a, m_b):
         return (np.matmul(m_a, m_b))
 
     if not all(len(row) == len(m_a[0]) for row in m_a):
-        raise TypeError("setting an array element with a sequence.")
+        raise ValueError("setting an array element with a sequence.")
     if not all(len(row) == len(m_b[0]) for row in m_b):
-        raise TypeError("setting an array element with a sequence.")
+        raise ValueError("setting an array element with a sequence.")
 
     # Convert lists to NumPy arrays
     m_a_num = np.array(m_a)
