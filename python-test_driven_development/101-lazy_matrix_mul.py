@@ -23,18 +23,6 @@ def lazy_matrix_mul(m_a, m_b):
     if not all(isinstance(row, list) for row in m_b):
         return (np.matmul(m_a, m_b))
 
-    if not all((isinstance(ele, int) or isinstance(ele, float))
-               for ele in [num for row in m_a for num in row]):
-        raise TypeError("invalid data type for einsum")
-    if not all((isinstance(ele, int) or isinstance(ele, float))
-               for ele in [num for row in m_b for num in row]):
-        raise TypeError("invalid data type for einsum")
-
-    if not all(len(row) == len(m_a[0]) for row in m_a):
-        raise TypeError("setting an array element with a sequence.")
-    if not all(len(row) == len(m_b[0]) for row in m_b):
-        raise TypeError("setting an array element with a sequence.")
-
     # Convert lists to NumPy arrays
     m_a_num = np.array(m_a)
     m_b_num = np.array(m_b)
@@ -50,5 +38,17 @@ def lazy_matrix_mul(m_a, m_b):
                                                            m_b_num_1,
                                                            m_a_num_1,
                                                            m_b_num_0))
+
+    if not all((isinstance(ele, int) or isinstance(ele, float))
+               for ele in [num for row in m_a for num in row]):
+        raise TypeError("invalid data type for einsum")
+    if not all((isinstance(ele, int) or isinstance(ele, float))
+               for ele in [num for row in m_b for num in row]):
+        raise TypeError("invalid data type for einsum")
+
+    if not all(len(row) == len(m_a[0]) for row in m_a):
+        raise TypeError("setting an array element with a sequence.")
+    if not all(len(row) == len(m_b[0]) for row in m_b):
+        raise TypeError("setting an array element with a sequence.")
 
     return (np.matmul(m_a, m_b))
