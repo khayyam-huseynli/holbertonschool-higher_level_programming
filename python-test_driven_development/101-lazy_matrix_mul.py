@@ -14,10 +14,6 @@ def lazy_matrix_mul(m_a, m_b):
     if not isinstance(m_b, list):
         raise TypeError("Scalar operands are not allowed, use '*' instead")
 
-    # Convert lists to NumPy arrays
-    m_a_num = np.array(m_a)
-    m_b_num = np.array(m_b)
-
     if not all(isinstance(row, list) for row in m_a):
         raise TypeError("m_a must be a list of lists")
     if not all(isinstance(row, list) for row in m_b):
@@ -34,6 +30,10 @@ def lazy_matrix_mul(m_a, m_b):
         raise TypeError("setting an array element with a sequence.")
     if not all(len(row) == len(m_b[0]) for row in m_b):
         raise TypeError("setting an array element with a sequence.")
+
+    # Convert lists to NumPy arrays
+    m_a_num = np.array(m_a)
+    m_b_num = np.array(m_b)
 
     m_a_num_0, m_a_num_1 = m_a_num.shape
     m_b_num_0, m_b_num_1 = m_b_num.shape
