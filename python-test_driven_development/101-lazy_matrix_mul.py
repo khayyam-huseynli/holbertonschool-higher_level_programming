@@ -20,8 +20,8 @@ def lazy_matrix_mul(m_a, m_b):
         raise ValueError("shapes (2,) and (1,2) not aligned: "
                          "2 (dim 0) != 1 (dim 0)")
     if not all(isinstance(row, list) for row in m_b):
-        raise ValueError("shapes (2,) and (1,2) not aligned: "
-                         "2 (dim 0) != 1 (dim 0)")
+        raise ValueError("shapes (1,2) and (2,0) not aligned: "
+                         "1 (dim 0) != 2 (dim 0)")
 
     if not all((isinstance(ele, int) or isinstance(ele, float))
                for ele in [num for row in m_a for num in row]):
