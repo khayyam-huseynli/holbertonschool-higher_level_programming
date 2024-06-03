@@ -9,10 +9,6 @@
 class Student:
     """ Student class """
 
-    first_name
-    last_name
-    age
-
     def __init__(self, first_name, last_name, age):
         """initialisation method """
 
