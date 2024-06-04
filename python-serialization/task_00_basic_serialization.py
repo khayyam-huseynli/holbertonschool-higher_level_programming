@@ -35,5 +35,5 @@ def load_and_deserialize(filename):
     import json
 
     with open(filename, 'r', encoding='utf-8') as file:
-        data = json.loads(file)
+        data = json.load(file)
     return data
