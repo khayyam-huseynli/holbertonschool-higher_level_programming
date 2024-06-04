@@ -23,7 +23,7 @@ def deserialize_from_xml(filename):
     root = tree.getroot()
     data = {}
     for child in root:
-        data[child.tag] = convert_value(child.text)
+        data[child.tag] = child.text
     return data
 
 
