@@ -30,4 +30,6 @@ def load_and_deserialize(filename):
     """
     import json
 
-    return json.loads(filename)
+    with open(filename, 'r', encoding='utf-8') as file:
+        data = json.loads(file)
+    return data
