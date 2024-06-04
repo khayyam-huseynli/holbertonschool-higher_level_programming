@@ -25,13 +25,3 @@ def deserialize_from_xml(filename):
     for child in root:
         data[child.tag] = child.text
     return data
-
-
-def convert_value(value):
-    try:
-        return int(value)
-    except ValueError:
-        try:
-            return float(value)
-        except ValueError:
-            return value
