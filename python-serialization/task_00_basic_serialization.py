@@ -15,6 +15,10 @@ def serialize_and_save_to_file(data, filename):
                   already exists it should be replaced.
     """
     import json
+    import os
+
+    if os.path.exists(filename):
+        os.remove(filename)
 
     with open(filename, 'w', encoding='utf-8') as file:
         j_str = json.dumps(data)
