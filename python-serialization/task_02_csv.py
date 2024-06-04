@@ -5,7 +5,7 @@
 """
 
 
-def convert_csv_to_json(filename):
+def convert_csv_to_json(csv_filename):
     """
         Thi the CSV filename as its parameter and writes the
         JSON data to data.json
