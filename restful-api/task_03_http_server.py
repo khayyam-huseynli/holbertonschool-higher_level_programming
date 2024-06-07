@@ -27,3 +27,12 @@ class SimpleHTTPServerRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(info).encode('utf-8'))
         else:
             self.send_error(404, "Endpoint not found")
+
+def run():
+    server_address = ('', 8000)
+    httpd = HTTPServer(server_address, SimpleHTTPServerRequestHandler)
+    print('Starting server on port 8000...')
+    httpd.serve_forever()
+
+    if __name__ == '__main__':
+        run()
