@@ -42,12 +42,13 @@ def get_user(username):
 def add_user():
     new_user = request.json
     username = new_user.get("username")
-    if username and username not in users:
-        users[username] = new_user
-        return jsonify({"message": "User added successfully",
-                        "user": new_user}), 201
-    else:
-        return jsonify({"error": "Invalid or existing username"}), 400
+    if not username:
+        return jsonify({"error": "Username is required"}), 400
+    if username in users:
+        return jsonify({"error": "Username already exists"}), 400
+    users[username] = new_user
+    return jsonify({"message": "User added successfully",
+                    "user": new_user}), 201
 
 
 # Run the Flask development server
