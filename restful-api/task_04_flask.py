@@ -4,9 +4,7 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 # Users stored in memory
-users = {
-    "jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}
-}
+users = {}
 
 
 # Define a route for the root URL
@@ -47,7 +45,7 @@ def add_user():
     if username in users:
         return jsonify({"error": "Username already exists"}), 400
     users[username] = new_user
-    return jsonify({"message": "User added successfully",
+    return jsonify({"message": "User added",
                     "user": new_user}), 201
 
 
